@@ -1,80 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.com.caelum.cadastro.mostraAlunosActivity">
-
-
-
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/belowlayout"
-        android:layout_marginTop="7dp" />
+    android:orientation="vertical"
+    tools:context="br.com.caelum.cadastro.mostraAlunosActivity" >
 
     <RelativeLayout
-        android:id="@+id/belowlayout"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/button7"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/btn_find"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="@string/str_btn_find"
             android:layout_alignParentRight="true"
-            android:layout_gravity="right|center_horizontal"
-            android:background="#359c5e"
-            android:layout_marginBottom="14dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="14dp"
-            android:text="Próximo"
-            android:textColor="#ffffff" />
+            android:layout_margin="10dp"
+            />
+
+        <EditText
+            android:id="@+id/et_location"
+            android:layout_width="fill_parent"
+            android:layout_height="36dp"
+            android:inputType="text"
+            android:hint="@string/hnt_et_location"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+
+            android:background="@drawable/edit_text_mapa"
+            android:drawableLeft="@drawable/places_ic_search"
+            android:width="250dp"
+            android:layout_marginTop="15dp"
+            android:textSize="14dp"
+
+            android:layout_toLeftOf="@id/btn_find"
+            />
+
+
 
 
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/topLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/belowlayout"
-        android:layout_alignLeft="@+id/map"
-        android:layout_marginBottom="40dp"
-        android:orientation="horizontal" >
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment" />
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
-            android:hint="Buscar"
-            android:textColorHint="#c7c7c7"
-            android:width="250dp" />
+</LinearLayout>
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:layout_weight="1"
-            android:background="#359c5e"
-            android:onClick="geoLocate"
-            android:padding="0dp"
-            android:paddingBottom="0dp"
-            android:text="go"
-            android:textColor="#ffffff" />
-    </LinearLayout>
 
-</RelativeLayout>
