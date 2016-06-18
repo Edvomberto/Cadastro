@@ -9,6 +9,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.com.caelum.cadastro.ListaAlunosActivity">
 
+   <TextView
+       android:id="@+id/option_fragment_txt_frag"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:textColor="@color/primary_dark"
+       android:textSize="40sp" />
 
    <ListView
        android:layout_width="match_parent"
